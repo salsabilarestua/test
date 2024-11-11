@@ -16,14 +16,14 @@ def save_user_data(user_data):
         json.dump(user_data, file, indent=4)
 
 def register():
-    username = input("Masuukkan username: ")
+    username = input("Masukkan username: ")
     password = getpass.getpass("Masukkan password baru: ")
 
     
     user_data = load_user_data()
     
     if username in user_data:
-        print("Usernam sudah ada. Silakan coba login.")
+        print("Username sudah ada. Silakan coba login.")
         return
 
     
@@ -33,16 +33,18 @@ def register():
 
 def login():
     
-    username = input("Masuukkan username: ")
-    password = getpass.getpass("Masukkan password baru: ")
+    username = input("Masukkan username: ")
+    password = getpass.getpass("Masukkan password: ")
 
     
     user_data = load_user_data()
     
     if username in user_data and user_data[username] == password:
         print("Login Berhasil!")
+        return True # Jika berhasil login return True agar bisa dilakukan check
     else:
-        print("Username atau Password berhasil.")
+        print("Username atau Password salah!")
+        return False # Jika login salah return False
 
 def main():
     """Main function to run the CLI login system."""
@@ -55,7 +57,8 @@ def main():
         if choice == '1':
             register()
         elif choice == '2':
-            login()
+            if login():
+                break # Keluar dari menu login jika login berhasil
         elif choice == '3':
             break
         else:
