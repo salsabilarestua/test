@@ -5,8 +5,8 @@ def send_notification(title, message):
     notification.notify(
         title=title,
         message=message,
-        app_name="Helper Mahasiswa",  # Optional: specify the app name
-        timeout=5  # Duration in seconds
+        app_name="Helper Mahasiswa", 
+        timeout=5  # Durasi notifikasi
     )
 
 def countdown(seconds, pomodoro):
@@ -46,16 +46,16 @@ def countdown(seconds, pomodoro):
 
 print("Tentukan waktu timer (Interval 10 menit)")
 jam = int(input("Jam: "))
-menit = (round((int(input("Menit: "))) / 10) * 10)
-jam += menit // 60
-menit = menit % 60
+menit = (round((int(input("Menit: "))) / 10) * 10) # Pembulatan menit ke puluhan terdekat (e.g. 46 -> 50; 33 -> 30)
+jam += menit // 60 # Jika menit lebih dari 60, tambahkan ke jam
+menit = menit % 60 # sisa menit
 
 print(f"Timer akan di set dengan waktu {jam} jam {menit} menit\n")
 while True:
     pomodoro = input("Gunakan pomodoro timer (setiap 25 menit istirahat 5 menit)? [Y/n] ")
     if pomodoro.lower() == "y":
-        countdown((menit*60) + (jam*3600), True)
+        countdown((menit*60) + (jam*3600), True) # Convert jam dan menit menjadi detik
     elif pomodoro.lower() == "n":
-        countdown((menit*60) + (jam*3600), False)
+        countdown((menit*60) + (jam*3600), False) # Convert jam dan menit menjadi detik
     else:
         print("Input salah!")
