@@ -37,7 +37,7 @@ def main():
         elif pilihan == "2":
             tampilan(jadwal)
         elif pilihan == "3":
-            print("Terima kasih! Program selesai.")
+            print("Program selesai.")
             break
         else:
             print("Pilihan tidak valid. Silakan pilih 1, 2, atau 3.")
