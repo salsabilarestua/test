@@ -32,7 +32,7 @@ def countdown(seconds, pomodoro):
                     pomTimer -= 1
                 pom = 0
                 print("Istirahat selesai!         ", end="\r")
-                send_notification("⏰ Pomodoro Timer ⏰", "Istirahat Selesai! Saatnya FOCUS kembali")
+                send_notification("⏰ Pomodoro Timer ⏰", "Istirahat Selesai! Saatnya FOKUS kembali")
                 time.sleep(5)
                 continue
         time.sleep(1)
