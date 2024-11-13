@@ -38,9 +38,6 @@ def main():
             tampilan(jadwal)
         elif pilihan == "3":
             print("Terima kasih!, Program selesai.")
-            break
+            return
         else:
             print("Pilihan tidak valid. Silakan pilih 1, 2, atau 3.")
-
-if __name__ == "__main__":
-    main()

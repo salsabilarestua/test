@@ -1,6 +1,8 @@
 import json
 import os
 import getpass
+import time
+import utils.helper as helper
 
 DATA_FILE = 'user_data.json'
 
@@ -22,6 +24,7 @@ def register():
     
     if username in user_data:
         print("\nUsername sudah ada! Silakan coba login kembali.")
+        time.sleep(1)
         return
     
     user_data[username] = password
@@ -36,14 +39,17 @@ def login():
     
     if username in user_data and user_data[username] == password:
         print("\nLogin Berhasil!")
+        time.sleep(1)
         return True, username # Jika berhasil login return True agar bisa dilakukan check
     else:
-        print("Username atau Password salah!")
+        print("\nUsername atau Password salah!")
+        time.sleep(1)
         return False, None # Jika login salah return False
 
 def main():
     """Main function to run the CLI login system."""
     while True:
+        helper.clear()
         print("Silahkan melakukan login terlebih dahulu!\n")
         print("1. Register")
         print("2. Login")
@@ -51,12 +57,16 @@ def main():
         choice = input("Pilih dengan angka: ")
 
         if choice == '1':
+            helper.clear()
             register()
         elif choice == '2':
+            helper.clear()
             result, user = login()
             if result:
+                helper.clear()
                 return user
         elif choice == '3':
             break
         else:
-            print("Invalid input! Silakan coba lagi.")
+            print("\nInvalid input! Silakan coba lagi.")
+            time.sleep(1)
