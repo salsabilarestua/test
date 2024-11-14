@@ -2,6 +2,9 @@ import json
 import os
 import time
 import utils.helper as helper
+from function import (
+    login
+)
 
 DATA_FILE = 'tips_belajar.json'
 
@@ -30,11 +33,11 @@ def tambahTips():
     save_tips_data(tips_data)
     print("Berhasil menyimpan tips. ") 
 
-def main():
+def main(username):
     """Main function to run the CLI login system."""
     while True:
         helper.clear()
-        print("Silahkan melakukan login terlebih dahulu!\n")
+        print(f"Silahkan {username} memilih option!\n")
         print("1. Tambah tips")
         print("2. exit")
         choice = input("Pilih dengan angka: ")
@@ -43,10 +46,9 @@ def main():
             helper.clear()
             tambahTips()
         elif choice == '2':
+            login.main()
             break
         else:
             print("\nInvalid input! Silakan coba lagi.")
             time.sleep(1)
 
-if __name__ == "__main__":
-    main()
