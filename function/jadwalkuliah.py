@@ -40,4 +40,4 @@ def main():
             print("Terima kasih!, Program selesai.")
             return
         else:
-            print("Pilihan tidak valid. Silakan pilih 1, 2, atau 3.")
+            print("Invalid. Silakan pilih 1, 2, atau 3.")
