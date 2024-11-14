@@ -34,7 +34,7 @@ def tambahTips():
     print("Berhasil menyimpan tips. ") 
 
 def main(username):
-    """Main function to run the CLI login system."""
+
     while True:
         helper.clear()
         print(f"Silahkan {username} memilih option!\n")

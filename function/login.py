@@ -50,7 +50,7 @@ def login():
         return False, None # Jika login salah return False
 
 def main():
-    """Main function to run the CLI login system."""
+
     while True:
         helper.clear()
         print("Silahkan melakukan login terlebih dahulu!\n")
