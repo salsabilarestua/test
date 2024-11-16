@@ -37,8 +37,8 @@ def login():
 
     user_data = load_user_data()
     if username == "admin" and password == "admin":
+        print("\nSelamat datang admin!")
         time.sleep(1)
-        username = "admin"
         return True, username
     elif username in user_data and user_data[username] == password:
         print("\nLogin Berhasil!")
