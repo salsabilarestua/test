@@ -2,9 +2,12 @@ import json
 import os
 import time
 import utils.helper as helper
-from function import (
-    login
-)
+import sys
+import os
+import main as mainInterface
+
+# Add the directory of `main.py` to sys.path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 DATA_FILE = 'tips_belajar.json'
 
@@ -39,14 +42,14 @@ def main(username):
         helper.clear()
         print(f"Silahkan {username} memilih option!\n")
         print("1. Tambah tips")
-        print("2. exit")
+        print("2. Exit")
         choice = input("Pilih dengan angka: ")
 
         if choice == '1':
             helper.clear()
             tambahTips()
         elif choice == '2':
-            login.main()
+            mainInterface.main()
             break
         else:
             print("\nInvalid input! Silakan coba lagi.")
