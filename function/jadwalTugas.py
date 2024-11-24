@@ -87,5 +87,3 @@ def main_tugas():
             return
         else:
             print("Invalid. Silakan pilih 1, 2, 3, atau 4.")
-
-main_tugas()
