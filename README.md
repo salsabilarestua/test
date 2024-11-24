@@ -1,4 +1,3 @@
-"# test" 
 # Helper Mahasiswa
 
 Aplikasi pembantu belajar mahasiswa yang memuat beberapa fitur untuk mempermudah mahasiswa dalam melakukan pembelajaran
